@@ -50,11 +50,11 @@ const Feed = () => {
   }, [])
 
   const filterPrompts = (searchText) => {
-    const regex = new RegExp('searchText', 'i')      //'i' se case-insensitive search hota hai, matlab ye 'searchText' ko case-insensitive ki tarah treat karega.
+    const regex = new RegExp(searchText, 'i')      //'i' se case-insensitive search hota hai, matlab ye 'searchText' ko case-insensitive ki tarah treat karega.
     return posts.filter(
       (item) =>
         regex.test(item.creator.username) ||
-        regex.test(item.item.tag) ||
+        regex.test(item.tag) ||
         regex.test(item.prompt)
     )
   }
